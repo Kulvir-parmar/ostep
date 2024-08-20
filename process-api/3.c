@@ -9,10 +9,7 @@ int main(int argc, char **argv) {
     } else if (rc == 0) {
         printf("Hello \n");
     } else {
-        sleep(1); // If parent process proceeds to execute first, sleep this
-                  // process so that child process can print "hello" first,
-                  // since we cannot use wait().
-        // wait(NULL);
+        wait(NULL);
         printf("good bye\n");
     }
     return 0;
